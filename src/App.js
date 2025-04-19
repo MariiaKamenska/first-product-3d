@@ -3,21 +3,24 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { OrbitControls } from "@react-three/drei";
 
+import Hero from "./Components/Hero"
+import { useControls } from "leva";
 import React from "react";
 import './App.css';
+
 
 function RotatingBox() {
   const meshRef = useRef();
 
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.025;
-      meshRef.current.rotation.y += 0.025;
-    }
-  });
+  // useFrame(() => {
+  //   if (meshRef.current) {
+  //     meshRef.current.rotation.x += 0.025;
+  //     meshRef.current.rotation.y += 0.025;
+  //   }
+  // });
   return (
     <mesh ref={meshRef}>
-     <boxGeometry args={[3, 3, 3]}/>
+     <boxGeometry args={[2, 2, 2]}/>
      <meshPhongMaterial color="lightgreen"/>
   </mesh>
 
@@ -26,12 +29,21 @@ function RotatingBox() {
 
 
 function App() {
+  const colors = useControls("Hero colors", {
+    head: "#f00",
+    body: "#0f0",
+    hand: "#00f",
+    leg: "#0ff"
+  });
+
   return (
     <div id="canvas-container" className="App">
-      <Canvas>
-        <RotatingBox />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[1, 1, 3]} color="blue"/>
+      <Canvas camera={{ position: [5, 3, 5], fov: 50 }}>
+        {/* <RotatingBox /> */}
+        <Hero colors={colors}/>
+        <ambientLight intensity={0.8} />
+        {/* <directionalLight position={[1, 1, 3]} color="orange" intensity={1}/> */}
+        <directionalLight position={[0, 0, 5]} intensity={1}/>
         <OrbitControls/>
       </Canvas> 
     </div>
