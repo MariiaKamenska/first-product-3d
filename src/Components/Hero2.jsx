@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Endy({ colors }) {
+export default function Hero2({ colors }) {
     
     return (
         <group>
