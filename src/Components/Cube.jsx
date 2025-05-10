@@ -1,4 +1,3 @@
-import Face from "./Face";
 export default function Cube({
     position,
     size = [1, 1, 1], 
@@ -7,7 +6,6 @@ export default function Cube({
 
     return (
         <group>
-            <Face />
             <mesh position={position}>
                 <boxGeometry args={size}/>
                 <meshPhongMaterial color={color}/>

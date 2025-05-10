@@ -9,16 +9,16 @@ export default function Face() {
             <meshBasicMaterial color="black" />
         </mesh>
         <mesh position={[-0.2, 0.1, 0.01]}>
-        <circleGeometry args={[0.03, 16]} />
-        <meshBasicMaterial color="black" />
-      </mesh>
-      <mesh position={[0.2, 0.1, 0.01]}>
-        <circleGeometry args={[0.03, 16]} />
-        <meshBasicMaterial color="black" />
-      </mesh>
-      <mesh position={[0, -0.15, 0]}>
-        <planeGeometry args={[0.2, 0.05]} />
-        <meshBasicMaterial color="black" />
-      </mesh>
+            <circleGeometry args={[0.03, 16]} />
+            <meshBasicMaterial color="black" />
+        </mesh>
+        <mesh position={[0.2, 0.1, 0.01]}>
+            <circleGeometry args={[0.03, 16]} />
+            <meshBasicMaterial color="black" />
+        </mesh>
+        <mesh position={[0, -0.15, 0]}>
+            <planeGeometry args={[0.2, 0.05]} />
+            <meshBasicMaterial color="black" />
+        </mesh>
     </group>
 }
